@@ -1,3 +1,3 @@
-Hack the North 2016 Side Project
-Sept 18th
-Also the day AxZ became a thing WOO!
+Hack the North 2016 Side Project <br/>
+Sept 18th 2016 <br/>
+Also the day Zoe and I became a thing WOO! <br/>
