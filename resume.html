@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Austin Cho-Wong Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+<style>
+h1,h2,h3,h4,h5,h6,p,a,li,span{font-family:'Operator Pro','Raleway',sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-title,.resume .main .category-row .category-subtitle{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row p,.resume .main .category-row li{font-size:smaller}sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}category:last-of-type category-item:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<script>angular.module("Resume",["ngMaterial"]).component("resume",{transclude:true,template:'<div class="resume">\n    <section class="main" ng-transclude></section>\n  </div>'}).component("resumeHeading",{controllerAs:"r",bindings:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n    <div class="page-title-container">\n      <h1 class="page-title page-title-first">{{r.firstName}}</h1>\n      <h1 class="page-title page-title-last">{{r.lastName}}</h1>\n    </div>\n    <div class="header-icons">\n      <span ng-if="r.website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{r.website}}</span>\n      <span ng-if="r.phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{r.phone}}</span>\n      <span ng-if="r.email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{r.email}}</span>\n      <span ng-if="r.github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{r.github}}</span>\n      <span ng-if="r.linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}</span>\n    </div>\n  </div>'}).component("resumeBody",{transclude:true,template:'<div layout="row" ng-transclude></div>'}).component("resumeColumn",{transclude:true,template:"<div ng-transclude></div>"}).component("sidebarCategory",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <div class="category">\n      <h5 class="category-row-title">{{r.name}}</h5>\n      <ng-transclude></ng-transclude>\n    </div>\n  </div>'}).component("category",{controllerAs:"r",bindings:{name:"@"},transclude:true,template:'<div flex="" class="category-row">\n    <h4 class="category-row-title">{{r.name}}</h4>\n    <ng-transclude></ng-transclude>\n  </div>'}).component("categoryItem",{controllerAs:"r",bindings:{title:"@",subtitle:"@"},transclude:true,template:'<div class="category">\n      <h5 class="category-title md-body-2">{{r.title}}</h5>&nbsp;\n      <h5 class="category-subtitle md-caption">{{r.subtitle}}</h5>\n      <ul class="category-bullets" ng-transclude></ul>\n  </div>'});
+</script>
+
+</head><body ng-app="Resume" ng-cloak="">
+    <resume>
+        <resume-heading first-name="Austin" last-name="Cho-Wong" website="www.austinchowong.me" email="achowong@uwaterloo.ca" phone="519-572-5527">
+        </resume-heading>
+        
+        <resume-body>
+            <resume-column flex="20">
+                <sidebar-category name="Education">
+                    <p>University of Waterloo</p>
+                    <p>Bachelor of Computer Science. Honours</p>
+                    <p>Business Option</p>
+                    <p>Graduating May 2020</p>
+                    <p>2B Academic Term Completed</p>
+                </sidebar-category>
+
+                <sidebar-category name="Skills">
+                    <p>C++ / Python / Java / Scheme / HTML / CSS</p>
+                    <p>Project Management</p>
+                    <p>Business Optimization</p>
+                    <p>App & Game Development</p>
+                    <p>Growth Hacking</p>
+                    <p>Video Production</p>
+                    <p>UI/UX Design</p>
+                </sidebar-category>
+                <sidebar-category name="Coursework">
+                    <p>Data Structures</p>
+                    <p>Algorithms</p>
+                    <p>Object-Oriented Development</p>
+                    <p>Sequential Programs</p>
+                    <p>Logic and Computation</p>
+                </sidebar-category>
+            </resume-column>
+            <resume-column flex="80">
+                <category name="Experience">
+                    <category-item title="Enterprise Software Developer" subtitle="Canadian Blood Services (Summer 2016)">
+                        <li>Developed Java app to automatically alert when clinics require inspection, saving $60,000/year</li>
+                        <li>Wrote Python programs to reduce manual administrative work for volunteers by 80%</li>
+                        <li>Created pipeline feature to instantly notify developers when apps on production servers fail</li>
+                        <li>Designed and implemented UI/UX of apps to improve usability</li>
+                    </category-item>
+                    <category-item title="Product Manager" subtitle="Elements of Knowledge (Summer 2015)">
+                         <li>Proposed and designed  app to allow tutors to teach remotely, increasing revenue by 150%</li>
+                         <li>Managed team of developers according to agile methodologies to convert business needs into app features</li>
+                         <li>Conducted feasability analyses and produced strategic plans to finish product development ahead of schedule</li>
+                         <li>Created wireframes, presentations, and UI/UX to demonstrate prototypes</li>
+                         <li>Developed feature to allow students to submit homework and receive annotated feedback from tutors in Ruby on Rails</li>
+                    </category-item>
+                    <category-item title="Founder" subtitle="Google Developer Group Waterloo - UW (2015 - 2016)">
+                        <li>Organized the largest developer group in Waterloo with over 1100 members</li>
+                        <li>Managed correspondence with Google to acquire sponsorships</li>
+                        <li>Created android development curriculum for beginners</li>
+                        <li>Planned and ran workshops on android and web development</li>
+                    </category-item>
+                    <category-item title="Web Developer" subtitle="Toronto Multicultural Youth Council (2013 - 2014)">
+                        <li>Improved maintainability of website back-end for non-technical members</li>
+                        <li>Created graphic and video advertisements, enhancing incoming traffic by 500%</li>
+                        <li>A/B tested email campaigns to improve click rate and response rate by 60%</li>
+                    </category-item>
+                </category>
+                <category name="Projects">
+                    <category-item title="Jymbit" subtitle="Nspire Hacks 2016 (Most Promising Startup App)">
+                        <li> Data science platform for gyms to identify and trade underutilized equipment</li>
+                        <li>Built with Python, numpy, sci-kit learn, plotly, and Raspberry Pi</li>
+                    </category-item>
+                    <category-item title="Cut the Cake!" subtitle="UW Stratford Game Design Competition 2016 (2nd Place)">
+                        <li>3 storey tall “Coordination Math” game, on display at UW Stratford Campus</li>
+                        <li>Powered by Python, JavaScript, and GCD algorithms</li>
+                    </category-item>
+                    <category-item title="Future Quest" subtitle="ENGL119 (Most Beneficial Student Initiative)">
+                        <li>Chrome plugin to improve UI/UX of University of Waterloo Quest site</li>
+                        <li>Constructed with JavaScript, HTML, CSS</li>
+                    </category-item>
+            </resume-column>
+        </resume-body>
+    </resume>
+
+
+</body></html>
