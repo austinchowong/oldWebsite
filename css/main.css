@@ -16,7 +16,6 @@ body {
     padding-top: 150px;
     
 	background-image: url(../img/header-bg.jpg);
-	background-size:100%;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -24,6 +23,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+	background-color: black;
     
   }
 
